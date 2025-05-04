@@ -2,34 +2,31 @@
 
 int main()
 {
-    int i, t, a[10],n,m,s,j=0,b[10];
+    int i, t, a[10], n, s, j=0, b[11]; 
     printf("Enter the number of elements in the array: ");
-    scanf("%d",&n);
-    for(i=0;i<n;i++){
-        printf("Enter the element %d: ",i+1);
-        scanf("%d",&a[i]);
+    scanf("%d", &n);
+    for(i = 0; i < n; i++){
+        printf("Enter the element %d: ", i + 1);
+        scanf("%d", &a[i]);
     }
-    printf("Given values are :");
-    for(i=0;i<n;i++){
-        printf("a[%d] = %d ",i,a[i]);
+    printf("\nGiven values are:\n");
+    for(i = 0; i < n; i++){
+        printf("a[%d] = %d\n", i, a[i]);
     }
-    printf("Enter the position of elements to be inserted: ");
-    scanf("%d",&t);
-    printf("Enter the value to be inserted : ");
-    scanf("%d",&s);
-    for(i=0;i<n;i++){
-        b[j]=a[i];
-        j++;
+    printf("\nEnter the position of element to be inserted: ");
+    scanf("%d", &t);
+    printf("Enter the value to be inserted: ");
+    scanf("%d", &s);
+    for(i = 0; i < t; i++){
+        b[j++] = a[i];
     }
-        b[j]=s;
-        j++;
-        for(i=t;i<n;j++){
-            b[j]=a[i];
-            j++;
-        }
-    printf("Inserted value is : ");
-    for(i=0;i<=n;i++){
-        printf("a[%d] = %d ",i,b[j]);
+    b[j++] = s;
+    for(i = t; i < n; i++){
+        b[j++] = a[i];
+    }
+    printf("\nFinal array after insertion:\n");
+    for(i = 0; i < j; i++){
+        printf("a[%d] = %d\n", i, b[i]);
     }
     return 0;
 }
