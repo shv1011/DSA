@@ -1,6 +1,11 @@
 # include <stdio.h>
 # include <stdlib.h>
 
+void swap( int *a, int *b){
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
 void SelectionSort(int arr[], int n) {
     for (int i = 0; i < n - 1; i++) {
         int min_idx = i;
@@ -9,10 +14,7 @@ void SelectionSort(int arr[], int n) {
                 min_idx = j;
             }
         }
-        // Swap arr[i] and arr[min_idx]
-        int temp = arr[i];
-        arr[i] = arr[min_idx];
-        arr[min_idx] = temp;
+        swap(&arr[min_idx], &arr[i]);
     }
 }
 void printArray(int arr[], int size) {
