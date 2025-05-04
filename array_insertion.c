@@ -28,7 +28,7 @@ int main()
             j++;
         }
     printf("Inserted value is : ");
-    for(i=0;i<n;i++){
+    for(i=0;i<=n;i++){
         printf("a[%d] = %d ",i,b[j]);
     }
     return 0;
